@@ -1,0 +1,63 @@
+<div class="main-container" *ngIf="loaded" (window:keypress)="onKey($event)">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12"><h1>Car Dashboard</h1></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <app-vss-gauge [value]="vss"></app-vss-gauge>
+      </div>
+      <div class="col-6">
+        <app-rpm-gauge [value]="rpm"></app-rpm-gauge>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-4">
+        <app-temp-reader [value]="temp"></app-temp-reader>
+      </div>
+      <div class="col-4">
+        <app-maf-reader [value]="maf"></app-maf-reader>
+      </div>
+      <div class="col-4">
+        <app-throttlepos-reader [value]="throttlepos"></app-throttlepos-reader>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-6">
+        <button class="btn btn-primary" (click)="requestErrors()">
+          Request Errors
+        </button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-primary" (click)="clearErrors()">
+          Clear Errors
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-3">
+    <div class="row">
+      <div class="col-12">
+        <app-dtc-table [errors]="errors"></app-dtc-table>
+      </div>
+    </div>
+  </div>
+  <div
+    id="menu-container"
+    class="overlay menu-open"
+    [ngClass]="{ 'menu-open': menuOpen }"
+  >
+    <app-log-table [logs]="logs"></app-log-table>
+  </div>
+  <div class="menu-button">
+    <a color="danger" size="sm" (click)="toggleMenu()">
+      <i class="fas fa fa-bars"></i>
+    </a>
+  </div>
+</div>

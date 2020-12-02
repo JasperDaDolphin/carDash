@@ -1,0 +1,23 @@
+<div class="col-12 module">
+  <h2>Errors</h2>
+  <div class="table-responsive">
+    <table class="table">
+      <thead class="table-fixed">
+        <tr>
+          <th>Code</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="errors.length == 0">
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr *ngFor="let error of errors">
+          <td>{{ error.code }}</td>
+          <td>{{ error.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

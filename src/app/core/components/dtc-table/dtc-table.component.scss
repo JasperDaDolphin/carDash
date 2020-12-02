@@ -1,0 +1,17 @@
+.table-responsive {
+  height: 250px;
+  max-height: 250px;
+  overflow-y: scroll;
+  position: relative;
+}
+
+table {
+  position: relative;
+  border-collapse: collapse;
+}
+
+th {
+  background: #ecf0f1;
+  position: sticky;
+  top: 0; /* Don't forget this, required for the stickiness */
+}

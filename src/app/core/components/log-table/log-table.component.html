@@ -1,0 +1,28 @@
+<div class="col-12 module">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Mode</th>
+          <th scope="col">Name</th>
+          <th scope="col">PID</th>
+          <th scope="col">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="logs.length == 0">
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+        <tr *ngFor="let log of logs">
+          <td>{{ log.mode }}</td>
+          <td>{{ log.name }}</td>
+          <td>{{ log.pid }}</td>
+          <td>{{ log.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
